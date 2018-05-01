@@ -10,7 +10,7 @@ var server = http.createServer(function (request, response){
         });
     }
     else if(request.url === "/ninjas"){
-        fs.readFile('ninjas.html', 'uft8', function(errors, contents){
+        fs.readFile('ninjas.html', 'utf8', function(errors, contents){
             response.writeHead(200, {'Content-Type': 'text/html'});
             response.write(contents);
             response.end();
@@ -18,7 +18,7 @@ var server = http.createServer(function (request, response){
     }
 
     else if(request.url === "/dojos/new"){
-        fs.readFile('dojos.html', 'utf8', function(errors, contents){
+        fs.readFile('dojo.html', 'utf8', function(errors, contents){
             response.writeHead(200, {'Content-type': 'text/html'});
             response.write(contents);
             response.end();
@@ -26,8 +26,8 @@ var server = http.createServer(function (request, response){
     }
     else{
         response.writeHead(404);
-        response.end('File not found!');
+        response.end('requested is not available');
     }
 });
 server.listen(1111);
-console.log("Running in localhost at port 0000");
+console.log("Running in localhost at port 1111");
